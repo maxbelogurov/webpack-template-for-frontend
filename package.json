@@ -1,0 +1,12 @@
+{
+  "name": "webpack-template-for-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Maksim Belogurov",
+  "license": "ISC",
+  "description": "Clean webpack template for frontend"
+}
