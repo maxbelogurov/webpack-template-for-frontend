@@ -1,0 +1,35 @@
+@import "_fonts.css";
+body {
+    font-family: 'Mulish', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color: #333333;
+    margin: 1rem 1rem 2rem;
+    font-size: 3rem;
+}
+.img-container {
+    display: grid;
+    margin: 0 1rem;
+    grid-template-columns: repeat(3, 33.33%);
+    .img-title {
+        font-size: 1.2rem;
+        padding-bottom: 10px;
+    }
+    .img-box {
+        width: 128px;
+        height: 128px;
+        background: url("../assets/img/picture.jpg") no-repeat top center / auto 100%;
+    }
+    .svg-box {
+        width: 128px;
+        height: 128px;
+        background: url("../assets/img/icon_css.svg") no-repeat top center / auto 100%;
+    }
+}
+
+
+
