@@ -26,52 +26,46 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/i,
-                loader: "html-loader",
-
+                loader: 'html-loader',
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.ico$/,
-                type: "asset/resource",
+                type: 'asset/resource',
                 generator: {
-                    filename: "./[name][ext]",
+                    filename: './[name][ext]',
                 },
             },
             {
                 test: /\.(png|jpg|jpeg|svg|gif)$/,
-                type: "asset/resource",
+                type: 'asset/resource',
                 generator: {
-                    filename: "./assets/img/[name][ext]",
+                    filename: './assets/img/[name][ext]',
                 },
             },
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                type: "asset/resource",
+                type: 'asset/resource',
                 generator: {
-                    filename: "./assets/fonts/[name][ext]",
+                    filename: './assets/fonts/[name][ext]',
                 },
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                        }
-                    },
-                    'css-loader'
-                ],
-            },
-            {
-                test: /\.s[ac]ss$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                        }
-                    },
-                    'css-loader',
-                    'sass-loader'
-                ],
             },
         ],
     },
@@ -81,6 +75,6 @@ module.exports = {
         },
         port: 4000,
         hot: isDev,
-        // open: true,
+        open: true,
     },
 }
